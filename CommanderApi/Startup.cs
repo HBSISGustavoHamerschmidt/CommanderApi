@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Commander.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,11 +35,10 @@ namespace Commander
                 (Configuration.GetConnectionString("CommanderConnection")));
 
             services.AddControllers();
-
             // Whenever our application asks for the interface in the first parameter,
             // give it the second parameter (the Class with functions implemented)
-            services.AddScoped<ICommanderRepo, SqlCommanderRepo>
-                ();
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
             // services.AddScoped<ICommanderRepo, MockCommanderRepo>();
         }
 
