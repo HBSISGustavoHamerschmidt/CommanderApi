@@ -10,7 +10,5 @@ namespace Commander.Data
 
         // Return me a single command based on an Id
         Command GetCommandById(int id);
-
-
     }
 }
