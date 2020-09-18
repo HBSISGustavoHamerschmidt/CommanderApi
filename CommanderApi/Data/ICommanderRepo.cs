@@ -19,5 +19,9 @@ namespace Commander.Data
 
         // Update a currently existing Command on database
         void UpdateCommand(Command cmd);
+
+
+        // Delete single command based on an Id
+        void DeleteCommand(Command cmd);
     }
 }

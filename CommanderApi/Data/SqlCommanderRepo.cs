@@ -16,8 +16,10 @@ namespace Commander.Data
         public void CreateCommand(Command cmd) =>
             _ = cmd != null ? _context.Commands.Add(cmd) : throw new ArgumentNullException(nameof(cmd));
         public void UpdateCommand(Command cmd)
-        {
-            // Nothing
-        }
+        { // No need for implementation
+        } 
+
+        public void DeleteCommand(Command cmd) 
+            => _ = cmd != null ? _context.Commands.Remove(cmd) : throw new ArgumentNullException(nameof(cmd));
     }
 }
