@@ -5,11 +5,14 @@ namespace Commander.Profiles
 {
     public class CommandsProfile : AutoMapper.Profile
     {
-        //Source -> Target
+        
         public CommandsProfile()
         {
+            //Source -> Target
             CreateMap<Command, CommandReadDto>();
-            CreateMap<CommandCreateDto, Command>(); 
+            CreateMap<CommandCreateDto, Command>();
+            CreateMap<CommandUpdateDto, Command>();
+            CreateMap<Command, CommandUpdateDto>();
         }
     }
 }

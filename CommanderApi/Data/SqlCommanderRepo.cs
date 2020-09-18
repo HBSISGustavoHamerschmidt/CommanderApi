@@ -15,5 +15,9 @@ namespace Commander.Data
         public Command GetCommandById(int id) => _context.Commands.FirstOrDefault(p => p.Id == id);
         public void CreateCommand(Command cmd) =>
             _ = cmd != null ? _context.Commands.Add(cmd) : throw new ArgumentNullException(nameof(cmd));
+        public void UpdateCommand(Command cmd)
+        {
+            // Nothing
+        }
     }
 }
